@@ -52,7 +52,7 @@ freq hz duration =
     release = reverse $ take (length output) attack
 
     output :: [Pulse]
-    output = map sin $ map (* step) [0.0 .. sampleRate * duration]
+    output = map (sin . (* step)) [0.0 .. sampleRate * duration]
 
 wave :: [Pulse]
 wave =
